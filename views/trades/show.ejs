@@ -1,0 +1,46 @@
+<%- include('../partials/header.ejs') %>
+<div class="content">
+    <div class="center-container"> 
+        <form style="width: 100%;">
+            <div class="event-heading">
+                <h3 class="dis-in-bl"><%= item.name %></h3>
+                <% if(user == item.host._id) { %>
+                    <div class="float-right">
+                        <button class="button update-btn" type="submit" formmethod="GET" formaction="/trades/<%= item.id %>/edit">Edit</button>
+                        <button class="button delete-btn" type="submit" formmethod="POST" formaction="/trades/<%= item.id %>?_method=DELETE">Delete</button>
+                    </div>
+                    <% } %>
+            </div>
+        </form>
+        <div class="wrapper">
+            <div class="event-image-div"><img class="mlr-50 event-image" src="<%= item.image %>" alt="Logo"></div>
+            <div class="detail">
+                <p>Year of manufacture: <%= item.year %></p>
+                <p>Color: <%= item.miles %></p>
+                <p>Price: <%= item.price %> </p>
+                <p>Condition: <%= item.condition %></p>
+            </div>
+            
+            <div class="wrap-right">
+                <% if(user!=item.host) { %>
+                    <p style="text-align: right;">
+                        Are you interested in this car?
+                    </p>
+                <form>
+                    <button class="btn btn-success" type="submit" formmethod="POST"
+                        formaction="/trades/<%= item._id %>/tradeitem">Trade it </button>
+                    <button class="btn btn-light" type="submit" formmethod="POST"
+                        formaction="/trades/<%= item._id %>/favourite">Interested</button>
+                    <button class="btn btn-dark" type="submit" formmethod="POST"
+                        formaction="/trades/<%= item._id %>/unfavourite">Not interested</button>
+                </form>
+                <% } %>
+            </div>
+        </div>
+        <div class="description">
+            <h3>Details</h3>
+            <p><%= item.details %></p> 
+        </div>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

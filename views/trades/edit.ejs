@@ -1,0 +1,33 @@
+<%- include('../partials/header.ejs') %>
+<div class="content">
+    <div class="center-container">
+        <form action = '/trades/<%= item.id%>?_method=PUT' method = 'POST' class="mt-20">
+            <label for="topic">Listing type</label>
+            <input type="text" id="topice" name="topic" placeholder="new or old or fair" value="<%= item.topic %>" required>
+
+            <label for="name">Make model</label>
+            <input type="text" id="name" name="name" placeholder="Enter make and model" value="<%= item.name %>" required>
+
+            <label for="year">year</label>
+            <input type="text" id="year" name="year" placeholder="Enter year.." value="<%= item.year %>" required>
+
+            <label for="details">Detail</label>
+            <textarea id="details" name="details" placeholder="Enter detail.." required minlenght="10"><%= item.details %></textarea>
+
+            <label for="miles">Miles</label>
+            <input type="text" id="miles" name="miles" placeholder="Enter miles.." value="<%= item.miles %>" required>
+        
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" value="<%= item.price %>" required>
+
+            <label for="condition">Condition</label>
+            <input type="text" id="condition" name="condition" value="<%= item.condition %>" required> 
+
+            <label for="image">Image URL</label>
+            <input type="url" id="image" name="image" placeholder="Enter image url.." value="<%= item.image %>" required>
+        
+            <button class="button submit-btn mb-100">Update Car Details</button>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

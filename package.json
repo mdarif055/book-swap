@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^4.6.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.1",
+    "express-rate-limit": "^6.4.0",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "flash": "^1.1.0",
+    "loader": "^2.1.1",
+    "logger": "^0.0.1",
+    "luxon": "^2.3.2",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.11.15",
+    "mongose": "^0.0.2-security",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.16",
+    "session": "^0.1.0",
+    "uuid": "^8.3.2"
+  },
+  "name": "project-3",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mohammad Arif",
+  "license": "ISC",
+  "description": "Etrades"
+}

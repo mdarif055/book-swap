@@ -1,0 +1,102 @@
+
+<%- include('../partials/header.ejs')%>
+<div class="content">
+    <div class="center-container mb-100">
+        <div class="event-heading">
+            <h4 class="dis-in-bl"><%=user.firstName%>'s Trades</h4>
+        </div>
+        <% if(trades.length){ %>
+        <table>
+            <tr>
+              <th>Trades</th>
+              <th>Category</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+            <% trades.forEach(trade => { %>
+            <tr>
+                <td><%= trade.name %></td>
+                <td><%= trade.topic %></td>
+                <td><%= trade.status %></td>
+
+                <td>
+                    <form style="float: left;">
+                        <button class="btn btn-light" type="submit" formmethod="GET" formaction="/trades/<%= trade._id %>/edit">Edit</button>
+    
+                        <button class="btn btn-dark" type="submit" formmethod="POST" formaction="/trades/<%= trade._id %>?_method=DELETE">Delete</button>
+                        <% if(trade.status != 'Available' && trade.status != 'Traded'){ %>
+                            <button type="submit" class="btn btn-primary" formmethod="POST" formaction="/trades/<%= trade._id%>/manageOffer">Manage Offer</button>
+                        <% } %>
+                    </form>
+                </td>
+            </tr>
+            <% }); %>
+        </table>
+        <% } else { %>
+            <p style="margin: 20px auto;width: 95%;">There are no trades to display.</p>
+        <% } %>
+    </div>
+
+    <div class="center-container mb-100">
+        <div class="event-heading">
+            <h4 class="dis-in-bl"><%=user.firstName%>'s Watch List</h4>
+        </div>
+        <% if(watchTrades.length){ %>
+            <table>
+                <tr>
+                    <th>Trades</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <% watchTrades.forEach(w => { %>
+                <% w.tradelist.forEach(r => {%>
+                <tr>
+                    <td><%= r.name %></td>
+                    <td><%= r.topic %></td>
+                    <td><%= r.status %></td>
+                    <td>
+                        <form style="float: left;">
+                            <button class="btn btn-dark" type="submit" formmethod="POST" formaction="/trades/<%= r.id%>/unfavourite">Not Interested</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+                <% }); %>
+            </table>
+            <% } else { %>
+                <p style="margin: 20px auto;width: 95%;">There are no items in watch list to display.</p>
+            <% } %>
+    </div>
+
+    <div class="center-container mb-100">
+        <div class="event-heading">
+            <h4 class="dis-in-bl"><%=user.firstName%>'s Offer List</h4>
+        </div>
+        <% if(offerTrades.length){ %>
+            <table>
+                <tr>
+                    <th>Trades</th>
+                    <th>Category</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+                <% offerTrades.forEach(trade => { %>
+                <tr>
+                    <td><%= trade.tradeid.name %></td>
+                    <td><%= trade.tradeid.topic %></td>
+                    <td><%= trade.tradeid.status %></td>
+                    <td>
+                        <form style="float: left;">
+                            <button class="btn btn-dark" type="submit" formmethod="GET" formaction="/trades/<%= trade.tradeid.id %>/cancelOffer">Cancel Offer</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }); %>
+            </table>
+            <% } else { %>
+                <p style="margin: 20px auto;width: 95%;">There are no offers to display.</p>
+            <% } %>
+    </div>
+</div>
+<%- include('../partials/footer.ejs')%>

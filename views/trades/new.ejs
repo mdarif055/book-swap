@@ -1,0 +1,34 @@
+<%- include('../partials/header.ejs') %>
+<div class="content">
+    <div class="center-container">
+        <form action = '/trades' method = 'POST' class="mt-20">
+            
+            <label for="topic">Listing type</label>
+            <input type="text" id="topice" name="topic" placeholder="new or old or fair" required>
+
+            <label for="name">Make model</label>
+            <input type="text" id="name" name="name" placeholder="Enter make and model" required>
+
+            <label for="year">year</label>
+            <input type="text" id="year" name="year" placeholder="Enter year.." required>
+
+            <label for="details">Detail</label>
+            <textarea id="details" name="details" placeholder="Enter detail.." required minlength="10"></textarea>
+
+            <label for="miles">Miles</label>
+            <input type="text" id="miles" name="miles" placeholder="Enter miles.." required>
+        
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price" required>
+
+            <label for="condition">Condition</label>
+            <input type="text" id="condition" name="condition" required> 
+
+            <label for="image">Image URL</label>
+            <input type="url" id="image" name="image" placeholder="Enter image url.." required>
+        
+            <button class="button submit-btn mb-100">Add Car Details</button>
+        </form>
+    </div>
+</div>
+<%- include('../partials/footer.ejs') %>

@@ -1,0 +1,47 @@
+[{
+  "_id": {
+    "$oid": "645f1ab67a3998ad01f8e6ab"
+  },
+  "topic": "New",
+  "name": "Tesla - Arif",
+  "year": "2024",
+  "details": "This is the car that you have been looking for",
+  "miles": "0",
+  "price": "50k",
+  "condition": "Excellent",
+  "image": "https://tesla-cdn.thron.com/delivery/public/image/tesla/91abd4c7-32a1-41cc-ade5-b64774dbea61/bvlatuR/std/2880x1800/Model-Y-Main-Hero-Desktop-Global?quality=auto-medium&amp;format=auto",
+  "host": {
+    "$oid": "645f1936cc50d2a38aa6d5f0"
+  },
+  "status": "Offer pending",
+  "createdAt": {
+    "$date": "2023-05-13T05:05:58.525Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T05:07:45.239Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "645f1b187a3998ad01f8e6ad"
+  },
+  "topic": "New",
+  "name": "Toyota - Amy",
+  "year": "2024",
+  "details": "A brand new Toyota seinna",
+  "miles": "0",
+  "price": "50k",
+  "condition": "Excellent",
+  "image": "https://hips.hearstapps.com/hmg-prod/images/2022-toyota-sienna-mmp-1-1623864335.jpg?crop=0.901xw:0.760xh;0.0401xw,0.113xh&resize=1200:*",
+  "host": {
+    "$oid": "645f1ace7a3998ad01f8e6ac"
+  },
+  "status": "Offer pending",
+  "createdAt": {
+    "$date": "2023-05-13T05:07:36.629Z"
+  },
+  "updatedAt": {
+    "$date": "2023-05-13T05:07:45.239Z"
+  },
+  "__v": 0
+}]
